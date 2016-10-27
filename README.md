@@ -10,11 +10,11 @@ By using the module, your application (that wants to use an external configurati
 
 3. If the system property *{appPrefix|uppercase}_CONF_DIR* is set, then this directory will be used:
 
-    export MYAPP_CONF_DIR=/var/conf/myapp
+       export MYAPP_CONF_DIR=/var/conf/myapp
 
 4. If no system or environment property is set, then a default directory will be selected:
     
-    /etc/myapp
+       /etc/myapp
     
 After the directory is resolved, it needs to be validated.
 
