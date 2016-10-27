@@ -3,18 +3,19 @@ Configuring a Java application has many quirks. This module, acknowledges that t
 
 ## So what do I get
 By using the module, your application (that wants to use an external configuration directory), can resolve which is the directory as follows:
+
 1. Before bootstraping **Pre-Conf** the coder will have to provide the application prefix (*{appPrefix}*). This will be used for the configuration resolution.
 2. If the coder provided the system property *{appPrefix}.conf.dir* then this directory will be used:
 
-      -DmyApp.conf.dir=/var/conf/myapp
+            -DmyApp.conf.dir=/var/conf/myapp
 
 3. If the system property *{appPrefix|uppercase}_CONF_DIR* is set, then this directory will be used:
 
-       export MYAPP_CONF_DIR=/var/conf/myapp
+            export MYAPP_CONF_DIR=/var/conf/myapp
 
 4. If no system or environment property is set, then a default directory will be selected:
     
-       /etc/myapp
+            /etc/myapp
     
 After the directory is resolved, it needs to be validated.
 
