@@ -10,9 +10,6 @@ public class ConfigurationResourcesBuilder {
 
     private Set<String> store = new HashSet<>();
 
-    public ConfigurationResourcesBuilder() {
-    }
-
     /**
      * Incrementally build a list of configuration resources.
      * @param filename the filename to append

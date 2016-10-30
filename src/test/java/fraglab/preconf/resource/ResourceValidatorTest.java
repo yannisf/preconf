@@ -1,6 +1,7 @@
 package fraglab.preconf.resource;
 
 import fraglab.preconf.ConfigurationWrapper;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -25,6 +26,7 @@ public class ResourceValidatorTest {
             file2.createNewFile();
 
             ConfigurationWrapper wrapper = ConfigurationWrapper.create("app", "one", "two");
+            Assert.assertEquals(wrapper.getConfigurationDirectory().getAbsolutePath(), path);
         } finally {
             file1.delete();
             file2.delete();

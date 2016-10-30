@@ -5,7 +5,12 @@ package fraglab.preconf.resource;
  */
 public class ConfigurationResourceNotFoundException extends RuntimeException {
 
+    /**
+     * Constructor to provide an exception message.
+     * @param message the message
+     */
     public ConfigurationResourceNotFoundException(String message) {
         super(message);
     }
+
 }

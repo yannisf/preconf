@@ -48,7 +48,7 @@ public class DirectoryResolver {
      */
     public File resolve() {
         LOG.debug("Starting configuration directory resolution for application prefix {}", appPrefix);
-        File configurationDirectory = null;
+        File configurationDirectory;
 
         if (isSystemProperty()) {
             LOG.debug("Found system property [{}]", compileSystemProperty());

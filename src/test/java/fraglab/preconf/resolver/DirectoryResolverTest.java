@@ -25,4 +25,11 @@ public class DirectoryResolverTest {
         }
     }
 
+    @Test(expectedExceptions = DirectoryNotFoundException.class)
+    public void testDefault() {
+        DirectoryResolver resolver = new DirectoryResolver("app");
+        File file = resolver.resolve();
+        Assert.assertEquals(file.getAbsolutePath(), "/etc/app");
+    }
+
 }
