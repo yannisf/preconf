@@ -19,16 +19,18 @@ public class ConfigurationWrapper {
 
     /**
      * Factory for a configuration wrapper.
+     *
      * @param appPrefix the application prefix
      * @param mandatory an array of mandatory file resources
      * @return the wrapper instance
      */
-    public static ConfigurationWrapper create(final String appPrefix, String...mandatory) {
+    public static ConfigurationWrapper create(final String appPrefix, String... mandatory) {
         DirectoryResolver resolver = new DirectoryResolver(appPrefix);
         File configurationDirectory = resolver.resolve();
 
         ConfigurationResourcesBuilder builder = new ConfigurationResourcesBuilder();
-        Arrays.stream(mandatory).forEach(builder::addMandatory);
+        Arrays.stream(mandatory)
+                .forEach(builder::addMandatory);
 
         ResourceValidator validator = new ResourceValidator();
         validator.validate(configurationDirectory, builder.build());
@@ -41,6 +43,7 @@ public class ConfigurationWrapper {
 
     /**
      * Gets the resolved configuration directory
+     *
      * @return the configuration directory
      */
     public File getConfigurationDirectory() {

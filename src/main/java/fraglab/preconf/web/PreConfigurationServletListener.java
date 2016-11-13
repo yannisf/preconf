@@ -14,30 +14,27 @@ import javax.servlet.ServletContextListener;
  */
 public class PreConfigurationServletListener implements ServletContextListener {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PreConfigurationServletListener.class);
-
     /**
      * The context init param where the application prefix is expected.
      */
     public static final String APP_PREFIX_CONTEXT_PARAM = "appPrefix";
-
     /**
      * The context init param where the mandatory configuration resources are expected. The resources should be a string,
      * with comma separated filenames.
      */
     public static final String PRE_CONF_MANDATORY_CONTEXT_PARAM = "preconf.mandatory";
-
     /**
      * The property in the servlet context where the configuration directory path will be stored.
      */
     public static final String CONF_DIR_CONTEXT_PARAM = "conf.dir";
+    private static final Logger LOG = LoggerFactory.getLogger(PreConfigurationServletListener.class);
 
     /**
      * Resolves the configuration directory with input from web.xml context params.
      *
+     * @param sce the context
      * @see #APP_PREFIX_CONTEXT_PARAM
      * @see #PRE_CONF_MANDATORY_CONTEXT_PARAM
-     * @param sce
      */
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -54,8 +51,8 @@ public class PreConfigurationServletListener implements ServletContextListener {
         //Nothing to destroy
     }
 
-    ConfigurationWrapper getWrapper(String appPrefix, String[] mandatory) {
+    private ConfigurationWrapper getWrapper(String appPrefix, String[] mandatory) {
         return ConfigurationWrapper.create(appPrefix, mandatory);
-    };
+    }
 
 }
