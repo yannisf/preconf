@@ -19,30 +19,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
-
-            <plugin>
-                <groupId>org.asciidoctor</groupId>
-                <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.3</version>
-                <executions>
-                    <execution>
-                        <id>output-html</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>process-asciidoc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <sourceDirectory>${basedir}/src/docs</sourceDirectory>
-                    <sourceDocumentName>README.adoc</sourceDocumentName>
-                    <outputDirectory>${basedir}</outputDirectory>
-                    <sourceHighlighter>coderay</sourceHighlighter>
-                    <backend>html5</backend>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 
